@@ -1,6 +1,6 @@
 .stats-section {
-  padding: 60px 0;
-  background: #ffffff;
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f0f6fc 0%, #ffffff 50%, #f5fafd 100%);
   position: relative;
   overflow: hidden;
   border-top: 1px solid var(--color-border);
@@ -15,30 +15,66 @@
   height: 3px;
   background: var(--gradient-primary);
   opacity: 0.15;
+  z-index: 1;
+}
+
+/* Background Glass blobs */
+.stats-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+.stats-blob-1 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #00b4d8 0%, transparent 70%);
+  top: -60px;
+  left: 8%;
+}
+
+.stats-blob-2 {
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, #009688 0%, transparent 70%);
+  bottom: -40px;
+  right: 12%;
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .stat-card {
-  padding: 36px 20px;
+  padding: 38px 24px;
   text-align: center;
   position: relative;
-  background: #ffffff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: var(--radius-lg);
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 102, 204, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
   transition: all var(--transition-normal);
+  overflow: hidden;
 }
 
 .stat-card:hover {
-  background: #f9fafb;
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--color-border-accent);
+  background: rgba(255, 255, 255, 0.65);
+  transform: translateY(-5px);
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 102, 204, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 102, 204, 0.25);
 }
 
 .stat-glow {
@@ -50,7 +86,6 @@
   background: var(--gradient-primary);
   opacity: 0;
   transition: opacity var(--transition-normal);
-  border-radius: 2px 2px 0 0;
 }
 
 .stat-card:hover .stat-glow { opacity: 1; }

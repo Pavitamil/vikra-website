@@ -24,6 +24,8 @@ export default function Stats() {
   return (
     <section className="stats-section" ref={ref}>
       <div className="stats-bg-line" />
+      <div className="stats-blob stats-blob-1" />
+      <div className="stats-blob stats-blob-2" />
       <div className="container">
         <div className="stats-grid">
           {stats.map((stat, i) => (
