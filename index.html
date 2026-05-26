@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Vikra Ocean Tech Pvt Ltd - Indigenous underwater robotics solutions. ROVs, USVs, underwater cameras, and marine technology for inspection, defense, and research." />
+    <meta name="keywords" content="ROV, underwater robot, ocean technology, ROVITO, WAVEBOT, KOORMA, marine technology, underwater inspection, USV, autonomous surface vehicle" />
+    <meta property="og:title" content="VIKRA OCEAN TECH PVT LTD" />
+    <meta property="og:description" content="Pioneering indigenous underwater robotics — ROVs, USVs, underwater cameras, and diver communication systems." />
+    <title>VIKRA OCEAN TECH PVT LTD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body style="margin: 0; background: #020b18;">
+    <!-- Premium Splash Preloader -->
+    <div id="preloader" style="position:fixed;inset:0;background:#020b18;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;font-family:sans-serif;color:#fff;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:20px;">
+        <!-- Glowing diamond logo -->
+        <div style="position:relative;width:80px;height:80px;display:flex;align-items:center;justify-content:center;animation:preloader-pulse 2s ease-in-out infinite;">
+          <svg viewBox="0 0 54 62" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="68">
+            <polygon points="27,13 50,28 40,52 14,52 4,28" stroke="#00b4d8" strokeWidth="2" fill="none"/>
+            <circle cx="27" cy="28" r="4" fill="#00b4d8"/>
+          </svg>
+        </div>
+        <!-- Text -->
+        <div style="text-align:center;">
+          <h1 style="font-family: 'Rajdhani', sans-serif; font-size:1.8rem; font-weight:700; letter-spacing:5px; background:linear-gradient(135deg, #0099cc, #00ccee); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin:0;">VIKRA</h1>
+          <p style="font-size:0.65rem; font-weight:600; letter-spacing:3px; color:rgba(255,255,255,0.4); text-transform:uppercase; margin:4px 0 0 0;">OCEAN TECH</p>
+        </div>
+        <!-- Progress bar -->
+        <div style="width:120px;height:2px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;position:relative;margin-top:10px;">
+          <div style="position:absolute;top:0;left:0;height:100%;width:50px;background:linear-gradient(90deg, #0099cc, #00ccee);border-radius:2px;animation:preloader-bar 1.5s infinite ease-in-out;"></div>
+        </div>
+      </div>
+    </div>
+    
+    <style>
+      @keyframes preloader-pulse {
+        0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(0, 180, 216, 0)); }
+        50% { transform: scale(1.05); filter: drop-shadow(0 0 15px rgba(0, 180, 216, 0.6)); }
+      }
+      @keyframes preloader-bar {
+        0% { left: -50px; }
+        100% { left: 120px; }
+      }
+    </style>
+
+    <div id="root"></div>
+    <script>
+      window.onerror = function(msg, src, line, col, err) {
+        document.getElementById('root').style.cssText = 'min-height:100vh;background:#0a0a1a;display:flex;align-items:center;justify-content:center;padding:40px;font-family:monospace';
+        document.getElementById('root').innerHTML = '<div style="color:#ff6b6b;max-width:900px"><h2 style="color:#f0b429;margin-bottom:16px">&#9888; JS Error Caught</h2><pre style="background:#1a1a2e;padding:20px;border-radius:8px;overflow:auto;color:#ff6b6b;font-size:13px">' + msg + '\n\nFile: ' + src + '\nLine: ' + line + '</pre></div>';
+      };
+      window.addEventListener('unhandledrejection', function(e) {
+        document.getElementById('root').style.cssText = 'min-height:100vh;background:#0a0a1a;display:flex;align-items:center;justify-content:center;padding:40px;font-family:monospace';
+        document.getElementById('root').innerHTML = '<div style="color:#ff6b6b;max-width:900px"><h2 style="color:#f0b429;margin-bottom:16px">&#9888; Unhandled Promise Rejection</h2><pre style="background:#1a1a2e;padding:20px;border-radius:8px;overflow:auto;color:#ff6b6b;font-size:13px">' + (e.reason && e.reason.stack ? e.reason.stack : String(e.reason)) + '</pre></div>';
+      });
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

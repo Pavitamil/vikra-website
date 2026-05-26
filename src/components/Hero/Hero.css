@@ -1,0 +1,267 @@
+/* ============================================
+   HERO SECTION - White Theme
+   ============================================ */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 120px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-hero-overlay);
+  z-index: 1;
+}
+
+/* Waves */
+.hero-waves {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  height: 80px;
+  min-height: 60px;
+  max-height: 120px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.hero-waves .waves {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  margin-bottom: -1px;
+  min-height: 60px;
+  max-height: 120px;
+}
+
+/* Parallax Wave Animation */
+.hero-waves .parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.hero-waves .parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.hero-waves .parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.hero-waves .parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.hero-waves .parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+/* Particles */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  opacity: 0;
+  animation: particle-float 10s infinite ease-in-out;
+}
+
+.particle-0  { width: 3px; height: 3px; left: 10%; top: 20%; animation-delay: 0s; animation-duration: 8s; }
+.particle-1  { width: 4px; height: 4px; left: 20%; top: 60%; animation-delay: 1s; animation-duration: 10s; }
+.particle-2  { width: 2px; height: 2px; left: 30%; top: 40%; animation-delay: 2s; animation-duration: 9s; }
+.particle-3  { width: 5px; height: 5px; left: 45%; top: 80%; animation-delay: 0.5s; animation-duration: 11s; opacity: 0.2; background: #90cdf4; }
+.particle-4  { width: 3px; height: 3px; left: 60%; top: 25%; animation-delay: 3s; animation-duration: 7s; }
+.particle-5  { width: 4px; height: 4px; left: 70%; top: 70%; animation-delay: 1.5s; animation-duration: 12s; }
+.particle-6  { width: 2px; height: 2px; left: 80%; top: 45%; animation-delay: 2.5s; animation-duration: 9s; }
+.particle-7  { width: 6px; height: 6px; left: 88%; top: 30%; animation-delay: 4s; animation-duration: 13s; opacity: 0.15; background: #bee3f8; }
+.particle-8  { width: 3px; height: 3px; left: 15%; top: 85%; animation-delay: 0.8s; animation-duration: 8.5s; }
+.particle-9  { width: 4px; height: 4px; left: 55%; top: 15%; animation-delay: 3.5s; animation-duration: 10.5s; }
+.particle-10 { width: 2px; height: 2px; left: 35%; top: 65%; animation-delay: 1.2s; animation-duration: 11.5s; }
+.particle-11 { width: 5px; height: 5px; left: 75%; top: 55%; animation-delay: 2.8s; animation-duration: 9.5s; opacity: 0.2; }
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 120px);
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 80px;
+}
+
+.hero-text {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.hero-description {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.8;
+  max-width: 760px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-get-started {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 38px;
+  background-color: #00b4d8;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.35);
+}
+
+.btn-get-started:hover {
+  background-color: #0096b1;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 180, 216, 0.5);
+}
+
+/* Edge Slide Arrows */
+.hero-arrow-edge {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.hero-arrow-edge:hover {
+  color: #fff;
+  transform: translateY(-50%) scale(1.15);
+}
+
+.hero-arrow-edge.left {
+  left: 2%;
+}
+
+.hero-arrow-edge.right {
+  right: 2%;
+}
+
+/* Indicators / Dashes at bottom center */
+.hero-dashes-container {
+  position: absolute;
+  bottom: 44px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 12px;
+}
+
+.hero-dash {
+  width: 32px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  padding: 0;
+  border-radius: 2px;
+}
+
+.hero-dash.active {
+  background: #fff;
+  width: 48px;
+}
+
+/* Progress bar */
+.hero-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  height: 3px;
+  background: rgba(255,255,255,0.15);
+}
+
+.hero-progress-bar {
+  height: 100%;
+  background: var(--gradient-primary);
+  transform-origin: left;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section { padding-top: 100px; }
+  .hero-title { font-size: 1.8rem; }
+  .hero-description { font-size: 0.92rem; margin-bottom: 24px; }
+  .btn-get-started { padding: 10px 30px; font-size: 0.88rem; }
+  .hero-arrow-edge { width: 44px; height: 44px; }
+  .hero-arrow-edge.left { left: 1%; }
+  .hero-arrow-edge.right { right: 1%; }
+  .hero-dashes-container { bottom: 24px; }
+}
+

@@ -1,0 +1,98 @@
+.stats-section {
+  padding: 60px 0;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.stats-bg-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0.15;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+.stat-card {
+  padding: 36px 20px;
+  text-align: center;
+  position: relative;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  box-shadow: none;
+  transition: background var(--transition-normal);
+}
+
+.stat-card:first-child { border-radius: var(--radius-md) 0 0 var(--radius-md); }
+.stat-card:last-child { border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+
+.stat-card:hover {
+  background: #f9fafb;
+  transform: none;
+  box-shadow: var(--shadow-sm);
+  border-color: var(--color-border-accent);
+}
+
+.stat-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  border-radius: 2px 2px 0 0;
+}
+
+.stat-card:hover .stat-glow { opacity: 1; }
+
+.stat-number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.stat-divider {
+  width: 36px;
+  height: 2px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  margin: 12px auto 0;
+  opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-card:first-child { border-radius: var(--radius-md) 0 0 0; }
+  .stat-card:last-child { border-radius: 0 0 var(--radius-md) 0; }
+}
+
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stat-card { padding: 22px 14px; border-radius: var(--radius-md) !important; }
+}

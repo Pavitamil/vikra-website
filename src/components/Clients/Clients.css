@@ -1,0 +1,221 @@
+.clients-section-container {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.clients-header-area {
+  background-color: #ffffff;
+  padding: 60px 0 0 0;
+  text-align: center;
+}
+
+.section-eyebrow {
+  color: #007bb5;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  color: #1a202c;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.section-title span {
+  color: #0099cc;
+}
+
+/* --- Wave Ribbon Container --- */
+.modern-wave-container {
+  position: relative;
+  width: 100%;
+  /* Extra height so logos riding up the crest don't get clipped */
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+/* Wave Ribbon Image — spans full width, centered vertically */
+.wave-ribbon-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  /* Gentle slow drift animation to make the wave feel alive */
+  animation: waveDrift 12s ease-in-out infinite alternate;
+}
+
+@keyframes waveDrift {
+  0%   { transform: translateX(0) scaleY(1); }
+  50%  { transform: translateX(-1%) scaleY(1.03); }
+  100% { transform: translateX(1%) scaleY(0.97); }
+}
+
+.wave-ribbon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* --- Logo Grid — rides the wave --- */
+.partners-grid-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  /* Use baseline alignment so the CSS var offsets actually spread up/down */
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  padding: 20px 60px 60px 60px;
+}
+
+/* Each logo card */
+.partner-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Crisp glass reflection underneath */
+  -webkit-box-reflect: below 8px linear-gradient(transparent 55%, rgba(255,255,255,0.65) 100%);
+}
+
+/*
+  Floating bob animation — each card bobs around its own wave offset.
+  --wave-offset is set inline per card (from the sine calculation in JSX).
+  Negative = up (crest), Positive = down (trough).
+*/
+.floating-item {
+  /* Shift to wave position first, then bob ±8px around it */
+  transform: translateY(var(--wave-offset, 0px));
+  animation: floatCard 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes floatCard {
+  0%   { transform: translateY(calc(var(--wave-offset, 0px) - 8px)); }
+  100% { transform: translateY(calc(var(--wave-offset, 0px) + 8px)); }
+}
+
+/* Base Shape Styling — frosted glass look */
+.partner-shape {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f6ff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 22px;
+  box-shadow:
+    inset 0 0 18px rgba(255, 255, 255, 0.9),
+    0 6px 20px rgba(0, 0, 0, 0.1),
+    0 2px 6px rgba(0, 0, 0, 0.06);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Metallic silver border via pseudo-element */
+.partner-shape::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(135deg, #e2e8f0 0%, #b0bec5 50%, #90a4ae 100%);
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.partner-shape:hover {
+  transform: scale(1.07);
+  box-shadow:
+    inset 0 0 20px rgba(255, 255, 255, 1),
+    0 14px 30px rgba(0, 153, 204, 0.25),
+    0 4px 12px rgba(0, 153, 204, 0.15);
+}
+
+.partner-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* --- Shape Modifiers --- */
+
+/* 1. Hexagon (NIOT, CIBA style) */
+.partner-shape.hexagon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  width: 160px;
+  box-shadow: none;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+.partner-item:has(.hexagon) {
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15)) drop-shadow(0 0 2px #b0bec5);
+}
+.partner-shape.hexagon::before { display: none; }
+
+/* 2. Rounded Square (NIPUN, REX style) */
+.partner-shape.rounded-square {
+  border-radius: 38px;
+}
+
+/* 3. Leaf / Teardrop (AVGC, CMLRE style) */
+.partner-shape.leaf {
+  border-radius: 50% 0% 50% 50%;
+}
+
+/* 4. Soft Square (NRSC, ICAR style) */
+.partner-shape.square {
+  border-radius: 18px;
+}
+
+.partner-shape.rounded-square::before,
+.partner-shape.leaf::before,
+.partner-shape.square::before {
+  border-radius: inherit;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .partners-grid-wrapper {
+    padding: 40px 30px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .partner-shape {
+    width: 120px;
+    height: 120px;
+  }
+  .partner-shape.hexagon {
+    width: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  .partners-grid-wrapper {
+    padding: 30px 20px;
+    gap: 15px;
+  }
+  .partner-shape {
+    width: 100px;
+    height: 100px;
+    padding: 15px;
+  }
+  .partner-shape.hexagon {
+    width: 110px;
+  }
+}
