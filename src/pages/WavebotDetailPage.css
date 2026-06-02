@@ -1,0 +1,346 @@
+/* ============================================
+   WAVEBOT DETAIL PAGE - High-End Style
+   ============================================ */
+.wavebot-detail-section {
+  padding: 80px 0;
+  background: var(--color-bg-body);
+  position: relative;
+}
+
+.wavebot-detail-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+/* ---- Left Column: Media Gallery ---- */
+.wavebot-detail-media {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.wavebot-detail-featured-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 16 / 10;
+}
+
+.wavebot-detail-featured {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.wavebot-media-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(26, 37, 53, 0.8);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wavebot-detail-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.wavebot-detail-gallery-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  aspect-ratio: 16 / 11;
+}
+
+.wavebot-detail-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.wavebot-thumb-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0, 102, 204, 0.8);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+}
+
+/* Video Section */
+.wavebot-detail-video-wrapper {
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  background: #ffffff;
+}
+
+.wavebot-detail-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-heading);
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  border-left: 3px solid var(--color-primary);
+  padding-left: 12px;
+}
+
+.wavebot-iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.wavebot-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ---- Right Column: Information & Specs ---- */
+.wavebot-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.wavebot-detail-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.wavebot-tech-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: rgba(0, 150, 136, 0.08);
+  border: 1px solid rgba(0, 150, 136, 0.15);
+  color: var(--color-teal);
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.wavebot-detail-title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--color-text-heading);
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.wavebot-underline {
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+
+.wavebot-overview-p {
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  color: var(--color-text-body);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+/* Specifications Table */
+.wavebot-specs-table-wrap {
+  padding: 36px 30px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  background: #ffffff;
+}
+
+.wavebot-specs-heading {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 750;
+  color: var(--color-text-heading);
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+  text-align: left;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 12px;
+}
+
+.wavebot-specs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.wavebot-spec-row {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border-light);
+  align-items: flex-start;
+}
+
+.wavebot-spec-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.wavebot-spec-label {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+
+.wavebot-spec-value {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  color: var(--color-text-body);
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .wavebot-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wavebot-detail-section {
+    padding: 60px 0;
+  }
+  .wavebot-specs-table-wrap {
+    padding: 24px 20px;
+  }
+  .wavebot-spec-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .wavebot-detail-video-wrapper {
+    padding: 20px;
+  }
+  .wavebot-detail-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* ============================================
+   WAVEBOT ALTERNATING OVERVIEW SECTION
+   ============================================ */
+.wavebot-alternating-overview {
+  padding: 100px 0;
+  background: #ffffff;
+  color: #1e293b;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.wavebot-alt-row {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.wavebot-alt-row:last-child {
+  margin-bottom: 0;
+}
+
+.wavebot-alt-row.reverse {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
+.wavebot-alt-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.wavebot-alt-img-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.wavebot-image-caption {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 750;
+  color: #1e293b;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.wavebot-gcs-badge-box {
+  margin-top: 30px;
+  padding: 20px;
+  border-left: 3px solid #0066cc;
+  background: rgba(0, 102, 204, 0.04);
+  border-radius: 4px;
+  text-align: left;
+  width: 100%;
+  max-width: 480px;
+  box-sizing: border-box;
+  color: #1e293b;
+}
+
+@media (max-width: 991px) {
+  .wavebot-alt-row, 
+  .wavebot-alt-row.reverse {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 70px;
+  }
+  
+  .wavebot-alternating-overview {
+    padding: 60px 0;
+  }
+}

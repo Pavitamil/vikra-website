@@ -73,7 +73,7 @@ export default function Services() {
         </div>
 
         <motion.div
-          className="services-grid"
+          className="services-grid-horizontal"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -82,20 +82,25 @@ export default function Services() {
           {services.map((s) => (
             <motion.div
               key={s.title}
-              className={`service-card glass-card service-card-${s.color}`}
+              className={`service-card-horizontal glass-card service-card-${s.color}`}
               variants={itemVariants}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
             >
-              <div className={`service-icon service-icon-${s.color}`}>{s.icon}</div>
-              <h3 className="service-title">{s.title}</h3>
-              <p className="service-description">{s.description}</p>
-              <ul className="service-highlights">
-                {s.highlights.map((h) => (
-                  <li key={h} className="service-highlight">
-                    <div className={`service-highlight-dot service-dot-${s.color}`} />
-                    {h}
-                  </li>
-                ))}
-              </ul>
+              <div className={`service-thumb-wrap service-thumb-${s.color}`}>
+                {s.icon}
+              </div>
+              <div className="service-info-wrap">
+                <h3 className="service-title-horizontal">{s.title}</h3>
+                <p className="service-desc-horizontal">{s.description}</p>
+                <ul className="service-highlights-horizontal">
+                  {s.highlights.map((h) => (
+                    <li key={h} className="service-highlight-horizontal">
+                      <div className={`service-highlight-dot service-dot-${s.color}`} />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
           ))}
         </motion.div>

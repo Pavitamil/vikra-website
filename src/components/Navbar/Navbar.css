@@ -67,6 +67,7 @@
 
 /* ---- Main Nav ---- */
 .navbar-main {
+  position: relative;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -145,6 +146,7 @@
 }
 
 .nav-item { position: relative; }
+.nav-item.has-mega { position: static !important; }
 
 .nav-link {
   display: flex;
@@ -200,6 +202,297 @@
   min-width: 230px;
   padding: 6px;
   box-shadow: var(--shadow-lg);
+}
+
+.standard-dropdown-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* ====================================================
+   MEGA DROPDOWN MENU - centered on viewport
+   ==================================================== */
+.mega-dropdown-menu {
+  position: fixed;
+  left: 50%;
+  /* NO transform here — framer-motion handles x: '-50%' to avoid override conflicts */
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  width: 880px;
+  max-width: calc(100vw - 32px);
+  padding: 22px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.14), 0 4px 14px rgba(0, 0, 0, 0.06);
+  z-index: 9999;
+}
+
+/* Triangle pointer — under 'Products' nav link */
+.mega-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -9px;
+  left: calc(50% - 130px);
+  border-width: 0 9px 9px 9px;
+  border-style: solid;
+  border-color: transparent transparent #ffffff transparent;
+  width: 0;
+  height: 0;
+  z-index: 1;
+  filter: drop-shadow(0 -2px 1px rgba(0,0,0,0.04));
+}
+
+/* Triangle pointer — under 'Services' nav link */
+.mega-dropdown-menu.mega-services::before {
+  left: calc(50% + 130px);
+}
+
+/* Services 3-Col: slightly wider */
+.mega-dropdown-menu.mega-3col {
+  width: 880px;
+  max-width: calc(100vw - 32px);
+}
+
+/* ---- Products: 4 columns ---- */
+.mega-dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+/* ---- Services: 3 columns ---- */
+.mega-dropdown-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+/* ---- Card item: horizontal layout (image on left, content on right) ---- */
+.mega-dropdown-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #f0f2f5;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  color: var(--color-text-body);
+  background: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mega-dropdown-item:hover {
+  border-color: rgba(0, 102, 204, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 102, 204, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Square thumbnail area at the left of each card */
+.mega-dropdown-thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  background: #eef2f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.mega-dropdown-item:hover .mega-dropdown-thumb {
+  background: #e0e8f3;
+}
+
+/* Custom background & border styles for services to match homepage colors exactly */
+.mega-dropdown-thumb.thumb-cyan {
+  background: rgba(0, 102, 204, 0.03) !important;
+  border: 1px solid rgba(0, 102, 204, 0.08);
+}
+.mega-dropdown-thumb.thumb-cyan svg {
+  color: var(--color-primary) !important;
+}
+.mega-dropdown-item:hover .mega-dropdown-thumb.thumb-cyan {
+  background: rgba(0, 102, 204, 0.07) !important;
+  border-color: rgba(0, 102, 204, 0.18);
+}
+.mega-dropdown-item:hover .mega-dropdown-thumb.thumb-cyan svg {
+  color: var(--color-primary-dark) !important;
+}
+
+.mega-dropdown-thumb.thumb-teal {
+  background: rgba(0, 150, 136, 0.03) !important;
+  border: 1px solid rgba(0, 150, 136, 0.08);
+}
+.mega-dropdown-thumb.thumb-teal svg {
+  color: var(--color-teal) !important;
+}
+.mega-dropdown-item:hover .mega-dropdown-thumb.thumb-teal {
+  background: rgba(0, 150, 136, 0.07) !important;
+  border-color: rgba(0, 150, 136, 0.18);
+}
+.mega-dropdown-item:hover .mega-dropdown-thumb.thumb-teal svg {
+  color: #00796b !important;
+}
+
+/* Contain the image fully (no cropping) — important for illustration-style images */
+.mega-dropdown-thumb-img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.mega-dropdown-item:hover .mega-dropdown-thumb-img {
+  transform: scale(1.08);
+}
+
+/* Style vector icons inside megamenu thumbnails */
+.mega-dropdown-thumb svg {
+  color: var(--color-primary);
+  width: 26px;
+  height: 26px;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.mega-dropdown-item:hover .mega-dropdown-thumb svg {
+  transform: scale(1.1);
+  color: var(--color-primary-dark);
+}
+
+
+/* Text block next to the image */
+.mega-dropdown-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  width: auto;
+  flex: 1;
+  text-align: left;
+}
+
+.mega-dropdown-label {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 2px;
+  letter-spacing: 0.1px;
+  line-height: 1.2;
+}
+
+.mega-dropdown-item:hover .mega-dropdown-label {
+  color: var(--color-primary);
+}
+
+.mega-dropdown-desc {
+  font-size: 0.7rem;
+  color: #6b7280;
+  line-height: 1.35;
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+/* Blue 'View Details →' link at the bottom */
+.mega-dropdown-view {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.1px;
+  transition: color 0.2s ease, letter-spacing 0.2s ease;
+}
+
+.mega-dropdown-item:hover .mega-dropdown-view {
+  color: var(--color-primary-dark);
+  letter-spacing: 0.5px;
+}
+
+
+/* Mobile responsive for Mega Menu */
+@media (max-width: 1024px) {
+  .mega-dropdown-menu {
+    position: static;
+    transform: none;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 10px 14px;
+    background: transparent;
+  }
+  
+  /* Hide triangle pointers in mobile drawer view */
+  .mega-dropdown-menu::before,
+  .mega-dropdown-menu.mega-services::before {
+    display: none;
+  }
+  
+  /* 2-column on tablet, 1-column on small mobile */
+  .mega-dropdown-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .mega-dropdown-grid-3col {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  
+  /* In mobile drawer, revert to horizontal layout for readability */
+  .mega-dropdown-item {
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.03);
+    border-color: transparent;
+    gap: 10px;
+    overflow: visible;
+  }
+  
+  .mega-dropdown-item:hover {
+    background: var(--color-bg-light);
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Small square thumb in mobile */
+  .mega-dropdown-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .mega-dropdown-thumb-img {
+    object-fit: contain;
+    width: 80%;
+    height: 80%;
+  }
+
+  .mega-dropdown-content {
+    padding: 0;
+    width: auto;
+    flex: 1;
+  }
+
+  .mega-dropdown-view {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .mega-dropdown-grid,
+  .mega-dropdown-grid-3col {
+    grid-template-columns: 1fr;
+  }
 }
 
 .dropdown-item {

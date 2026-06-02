@@ -15,14 +15,19 @@
   </head>
   <body style="margin: 0; background: #020b18;">
     <!-- Premium Splash Preloader -->
-    <div id="preloader" style="position:fixed;inset:0;background:#020b18;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;font-family:sans-serif;color:#fff;">
-      <div style="display:flex;flex-direction:column;align-items:center;gap:20px;">
-        <!-- Glowing diamond logo -->
-        <div style="position:relative;width:80px;height:80px;display:flex;align-items:center;justify-content:center;animation:preloader-pulse 2s ease-in-out infinite;">
-          <svg viewBox="0 0 54 62" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="68">
-            <polygon points="27,13 50,28 40,52 14,52 4,28" stroke="#00b4d8" strokeWidth="2" fill="none"/>
-            <circle cx="27" cy="28" r="4" fill="#00b4d8"/>
-          </svg>
+    <div id="preloader" style="position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;font-family:sans-serif;color:#fff;overflow:hidden;">
+      <!-- Cinematic Background Image with Zoom & Dark Gradient overlay -->
+      <div style="position:absolute;inset:0;background:radial-gradient(circle at center, rgba(2, 11, 24, 0.55) 0%, rgba(2, 11, 24, 0.9) 100%), url('/beach_shore_wave.png') no-repeat center center / cover;animation:preloader-bg-zoom 8s ease-out forwards;z-index:-1;"></div>
+      
+      <div style="display:flex;flex-direction:column;align-items:center;gap:20px;z-index:2;">
+        <!-- Glowing website logo with spinning tech circles -->
+        <div style="position:relative;width:140px;height:140px;display:flex;align-items:center;justify-content:center;animation:preloader-pulse 2s ease-in-out infinite;">
+          <!-- Spinning outer dashed circle -->
+          <div style="position:absolute;width:120px;height:120px;border:2px dashed #00ccee;border-radius:50%;animation:preloader-spin 10s linear infinite;opacity:0.8;box-shadow: 0 0 15px rgba(0, 204, 238, 0.2);"></div>
+          <!-- Spinning inner reverse dashed circle -->
+          <div style="position:absolute;width:104px;height:104px;border:1px dashed rgba(0, 180, 216, 0.5);border-radius:50%;animation:preloader-spin-reverse 6s linear infinite;"></div>
+          <!-- Logo in center -->
+          <img src="/logo.png" alt="VIKRA Logo" style="width:75px;height:75px;object-fit:contain;z-index:2;" />
         </div>
         <!-- Text -->
         <div style="text-align:center;">
@@ -37,6 +42,18 @@
     </div>
     
     <style>
+      @keyframes preloader-bg-zoom {
+        0% { transform: scale(1.15); filter: blur(3px); }
+        100% { transform: scale(1); filter: blur(0px); }
+      }
+      @keyframes preloader-spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes preloader-spin-reverse {
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
+      }
       @keyframes preloader-pulse {
         0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(0, 180, 216, 0)); }
         50% { transform: scale(1.05); filter: drop-shadow(0 0 15px rgba(0, 180, 216, 0.6)); }

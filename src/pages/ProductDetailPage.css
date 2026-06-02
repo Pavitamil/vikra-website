@@ -1,0 +1,394 @@
+/* ============================================
+   PRODUCT DETAIL PAGE - Premium Style
+   ============================================ */
+
+.product-detail-section {
+  padding: 80px 0 100px;
+  background: var(--color-bg-body);
+  position: relative;
+}
+
+/* ---- Two-column layout ---- */
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: flex-start;
+}
+
+/* ============================================
+   LEFT COLUMN — Image + Applications
+   ============================================ */
+.product-detail-media {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: sticky;
+  top: 110px;
+}
+
+.product-detail-img-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(145deg, #f0f7ff, #ffffff);
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.product-detail-img-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 30%, rgba(0, 102, 204, 0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.product-detail-img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 8px 24px rgba(0, 102, 204, 0.15));
+  transition: transform 0.4s ease;
+}
+
+.product-detail-img-wrap:hover .product-detail-img {
+  transform: scale(1.04) translateY(-4px);
+}
+
+.product-detail-img-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(10, 25, 50, 0.82);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* ---- Applications Card ---- */
+.product-detail-applications {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+}
+
+.product-detail-applications h4 {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-detail-applications h4::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.product-detail-app-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.product-detail-app-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-heading);
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 9px 14px;
+  transition: all 0.2s;
+}
+
+.product-detail-app-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.product-detail-app-tag:hover {
+  border-color: rgba(0, 102, 204, 0.2);
+  background: rgba(0, 102, 204, 0.04);
+  color: var(--color-primary);
+}
+
+/* ============================================
+   RIGHT COLUMN — Info & Specs
+   ============================================ */
+.product-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ---- Header ---- */
+.product-detail-header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.product-detail-badge {
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+
+.product-detail-badge.cyan {
+  background: rgba(0, 102, 204, 0.08);
+  color: var(--color-primary);
+  border: 1px solid rgba(0, 102, 204, 0.18);
+}
+
+.product-detail-badge.teal {
+  background: rgba(0, 150, 136, 0.08);
+  color: var(--color-teal);
+  border: 1px solid rgba(0, 150, 136, 0.18);
+}
+
+.product-detail-name {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--color-text-heading);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.product-detail-underline {
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.product-detail-tagline {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ---- Description / Overview ---- */
+.product-detail-overview h3 {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.product-detail-overview p {
+  font-size: 0.96rem;
+  color: var(--color-text-body);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.product-detail-overview p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Features List ---- */
+.product-detail-features-wrap {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+
+.product-detail-features-wrap h3 {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+}
+
+.product-detail-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product-detail-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--color-text-body);
+  line-height: 1.5;
+}
+
+.feature-check {
+  width: 20px;
+  height: 20px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.feature-check svg {
+  color: #fff;
+}
+
+/* ---- Specifications Table ---- */
+.product-detail-specs-wrap {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-md);
+}
+
+.product-detail-specs-wrap h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 750;
+  color: var(--color-text-heading);
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--color-border);
+  letter-spacing: 0.5px;
+}
+
+.product-detail-spec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.product-detail-spec-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--color-border-light);
+  align-items: flex-start;
+}
+
+.product-detail-spec-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.spec-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-text-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.spec-value {
+  font-size: 0.92rem;
+  color: var(--color-text-body);
+  line-height: 1.5;
+}
+
+/* ---- CTA Buttons ---- */
+.product-detail-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .product-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .product-detail-media {
+    position: static;
+  }
+  .product-detail-img-wrap {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-detail-section {
+    padding: 60px 0 80px;
+  }
+  .product-detail-name {
+    font-size: 2rem;
+  }
+  .product-detail-spec-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .product-detail-app-list {
+    grid-template-columns: 1fr;
+  }
+  .product-detail-cta {
+    flex-direction: column;
+  }
+  .product-detail-cta a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-detail-img-wrap {
+    padding: 24px;
+  }
+  .product-detail-specs-wrap {
+    padding: 24px 18px;
+  }
+  .product-detail-features-wrap {
+    padding: 20px 18px;
+  }
+  .product-detail-applications {
+    padding: 20px 18px;
+  }
+}

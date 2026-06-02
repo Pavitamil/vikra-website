@@ -1,0 +1,43 @@
+/* ============================================
+   HERO VIDEO BACKGROUND — Native HTML5 <video>
+   ============================================ */
+
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #020b18;
+}
+
+/* Video fills and covers entire hero, like object-fit: cover */
+.hero-video-player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Always at least as wide/tall as the container */
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Cinematic gradient overlay — keeps text readable */
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    radial-gradient(ellipse at 50% 70%, rgba(0, 30, 80, 0.4) 0%, transparent 65%),
+    linear-gradient(
+      180deg,
+      rgba(2, 11, 24, 0.75) 0%,
+      rgba(2, 11, 24, 0.50) 30%,
+      rgba(2, 11, 24, 0.50) 70%,
+      rgba(2, 11, 24, 0.88) 100%
+    );
+}

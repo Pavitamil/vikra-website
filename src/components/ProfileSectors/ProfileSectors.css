@@ -1,0 +1,201 @@
+/* ==========================================================================
+   PROFILE SECTORS - EXACT MATCH EYEROV CARD LAYOUT
+   ========================================================================== */
+
+.profile-sectors-section {
+  /* Gorgeous light gray dotted background pattern matching the reference image exactly */
+  background-color: #f6f8f9;
+  background-image: 
+    radial-gradient(rgba(0, 0, 0, 0.04) 22%, transparent 22%),
+    radial-gradient(rgba(0, 0, 0, 0.04) 22%, transparent 22%);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Horizontal 5-Column Grid */
+.profile-sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px; /* Exact gap width to match the image spacing */
+  margin-top: 48px;
+}
+
+/* Sharp rectangular cards with very slight rounding and thin border exactly like the image */
+.sector-profile-card {
+  position: relative;
+  height: 420px;
+  border-radius: 4px; /* Sharp corners matching the reference image */
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Background image */
+.sector-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+  z-index: -2;
+}
+
+.sector-profile-card:hover .sector-card-bg {
+  transform: scale(1.06);
+}
+
+/* Tint overlay - linear top-to-bottom dark gradient overlay */
+.sector-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.7) 100%);
+  transition: background 0.3s ease;
+  z-index: -1;
+}
+
+.sector-profile-card:hover .sector-card-overlay {
+  background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0.85) 100%);
+}
+
+/* Content block */
+.sector-card-content {
+  position: absolute;
+  inset: 0;
+  padding: 20px;
+  padding-bottom: 74px; /* Offset for full-width bottom bar */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Massive, bold, centered white title text with soft drop shadow */
+.sector-card-title-main {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 2.2vw, 2.5rem); /* Extra large bold font matching image */
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sector-profile-card:hover .sector-card-title-main {
+  opacity: 0;
+  transform: translateY(-15px);
+  pointer-events: none;
+}
+
+/* Detailed description that fades and slides up on hover */
+.sector-card-description-wrap {
+  position: absolute;
+  inset: 0;
+  padding: 24px;
+  padding-bottom: 74px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sector-profile-card:hover .sector-card-description-wrap {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sector-card-desc-text {
+  font-family: var(--font-body);
+  font-size: 0.85rem; /* Clean readable font size matching the image text */
+  line-height: 1.6;
+  font-weight: 500;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.75);
+  margin: 0;
+  text-align: center;
+}
+
+/* Full-width dark semi-transparent "Learn More" bottom bar matching image */
+.sector-card-action-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: rgba(43, 48, 52, 0.85); /* Slate-dark semi-transparent exactly like the image */
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+  z-index: 2;
+  text-decoration: none !important;
+}
+
+.sector-card-action-text {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.2px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover highlights matching site color theme */
+.sector-profile-card:hover .sector-card-action-bar {
+  background: rgba(0, 102, 204, 0.95); /* Highlight color on hover */
+}
+
+.sector-profile-card:hover .sector-card-action-text {
+  color: #ffffff;
+  transform: scale(1.02);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .profile-sectors-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .sector-profile-card {
+    height: 380px;
+  }
+}
+
+@media (max-width: 900px) {
+  .profile-sectors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .sector-profile-card {
+    height: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-sectors-section {
+    padding: 60px 0;
+  }
+  .profile-sectors-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .sector-profile-card {
+    height: 340px;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+}

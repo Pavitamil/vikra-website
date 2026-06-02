@@ -1,0 +1,130 @@
+/* ============================================
+   FEATURED USV - WAVEBOT Banner Styles
+   ============================================ */
+.featured-usv-section {
+  padding: 80px 0;
+  background: var(--color-bg-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-usv-card {
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-usv-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.featured-usv-image-wrap {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+}
+
+.featured-usv-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+  display: block;
+}
+
+.featured-usv-card:hover .featured-usv-img {
+  transform: scale(1.03);
+}
+
+.featured-usv-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+}
+
+.featured-usv-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.featured-usv-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: rgba(0, 102, 204, 0.08);
+  border: 1px solid rgba(0, 102, 204, 0.15);
+  color: var(--color-primary);
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.featured-usv-card-title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--color-text-heading);
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+/* Exactly two lines of description on desktop */
+.featured-usv-desc {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--color-text-body);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 500px;
+  text-align: left;
+}
+
+.featured-usv-btn {
+  padding: 13px 36px;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 991px) {
+  .featured-usv-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .featured-usv-card {
+    padding: 30px;
+  }
+  .featured-usv-img {
+    height: 320px;
+  }
+  .featured-usv-card-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-usv-section {
+    padding: 60px 0;
+  }
+  .featured-usv-img {
+    height: 260px;
+  }
+  .featured-usv-desc {
+    font-size: 0.96rem;
+    margin-bottom: 22px;
+  }
+}
