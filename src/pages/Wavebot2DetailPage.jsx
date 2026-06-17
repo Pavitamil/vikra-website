@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion'
 import PageHero from '../components/PageHero/PageHero'
+import SpecsList from '../components/SpecsList/SpecsList'
 import wavbot2Img from '../assets/vikra-product-img/wavbot2-img.png'
 import wavebotImg2 from '../assets/vikra-product-img/wavebot-img-2.png'
 import wavebotImg3 from '../assets/vikra-product-img/wavebot-img-3.png'
 import './WavebotDetailPage.css' // Reuse premium styling
+import Payloads from '../components/Payloads/Payloads'
+
 
 export default function Wavebot2DetailPage() {
   const specs = [
@@ -115,26 +118,24 @@ export default function Wavebot2DetailPage() {
 
       {/* Specifications Section */}
       <section className="wavebot-specs-section" style={{ padding: '80px 0', background: '#ffffff', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
-        <div className="container" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
           
           <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.8rem', fontWeight: 800, color: '#1e293b', marginBottom: '40px', letterSpacing: '-0.5px' }}>
             Specifications
           </h2>
 
-          {/* Wide Landscape Banner Image (950px width, 260px reduced height) */}
-          <div className="glass-card" style={{ width: '100%', maxWidth: '950px', height: '260px', margin: '0 auto 50px auto', borderRadius: '24px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)', boxShadow: '0 20px 40px rgba(0,0,0,0.08)' }}>
-            <img src={wavbot2Img} alt="WAVEBOT-II specifications model" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
-          </div>
+          <div className="specs-two-column-grid">
+            {/* Left Column: Specifications List */}
+            <div className="specs-list-col" style={{ padding: '0 20px' }}>
+              <SpecsList specs={specs} />
+            </div>
 
-          {/* Specifications Bullet List */}
-          <div style={{ textAlign: 'left', padding: '0 20px' }}>
-            <ul style={{ listStyleType: 'disc', paddingLeft: '20px', fontSize: '1.15rem', lineHeight: '2.2', color: '#334155' }}>
-              {specs.map((spec, idx) => (
-                <li key={idx} style={{ marginBottom: '12px' }}>
-                  <strong style={{ color: '#1e293b' }}>{spec.label}</strong> – {spec.value}
-                </li>
-              ))}
-            </ul>
+            {/* Right Column: Model Image */}
+            <div className="specs-image-col">
+              <div className="glass-card">
+                <img src={wavbot2Img} alt="WAVEBOT-II specifications model" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              </div>
+            </div>
           </div>
 
         </div>
@@ -160,6 +161,7 @@ export default function Wavebot2DetailPage() {
           </div>
         </div>
       </section>
-    </>
+    
+      <Payloads /></>
   )
 }

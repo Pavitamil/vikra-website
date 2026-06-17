@@ -1,0 +1,66 @@
+.product-specs-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.product-specs-heading {
+  font-size: 2.5rem;
+  font-family: var(--font-heading, sans-serif);
+  font-weight: 800;
+  color: #001f3f;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.product-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product-spec-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.product-spec-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0033a0; /* Deep thick blue from the image */
+  flex-shrink: 0;
+}
+
+.product-spec-text-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-spec-title {
+  font-size: 1.4rem;
+  font-family: var(--font-heading, sans-serif);
+  font-weight: 800; /* Bold title */
+  color: #001f3f;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.product-spec-value {
+  font-size: 1.05rem;
+  font-family: var(--font-body, sans-serif);
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .product-specs-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

@@ -34,6 +34,12 @@ export const products = [
       'Camera: 2 Nos 2MP 1080P and Offline 4K camera',
       'Lights: 4 x 1500 Lumens',
     ],
+    highlights: [
+      { icon: 'Camera', title: 'Dual 1080P & 4K Camera', description: 'Capture high-resolution offline 4K visuals with real-time 2MP streams.' },
+      { icon: 'Anchor', title: 'Depth Rating of 100m', description: 'Engineered for robust shallow to mid-depth underwater exploration.' },
+      { icon: 'Zap', title: '6 Thrusters Vector Grid', description: 'Highly maneuverable configuration for precise positioning underwater.' },
+      { icon: 'Clock', title: '120 Min Endurance', description: 'Run continuous visual inspection tasks up to 2 hours per charge.' }
+    ],
     specs: [
       { label: 'Endurance capable', value: 'Min 120 min' },
       { label: 'Size', value: '500x400x500mm' },
@@ -77,6 +83,12 @@ export const products = [
       'Lights: 4 x 1500 Lumens',
       'Compact and highly portable',
     ],
+    highlights: [
+      { icon: 'Scale', title: 'Compact 8 Kg Weight', description: 'Highly portable design deployable by a two-person team in minutes.' },
+      { icon: 'Anchor', title: 'Depth Rating of 100m', description: 'Built for deep exploration and underwater surveillance missions.' },
+      { icon: 'Cable', title: 'CAT6 Buoyant Tether', description: 'Enables real-time high-definition video streaming with zero lag.' },
+      { icon: 'Sun', title: '6000 Lumens Lights', description: 'Powerful illumination to pierce murky, dark underwater environments.' }
+    ],
     specs: [
       { label: 'Diving Depth', value: '100m' },
       { label: 'Rated Speed', value: '2-4 Knots' },
@@ -112,6 +124,12 @@ export const products = [
       'Max Payload: 30 Kg',
       'Collision Avoidance: LiDAR Obstacle Detection',
       'Navigation: RTK GNSS Centimeter Accuracy',
+    ],
+    highlights: [
+      { icon: 'Compass', title: 'Autonomous Navigation', description: 'Navigate effortlessly with smart self-guided controls and waypoint planning.' },
+      { icon: 'Clock', title: '4 Hours Endurance', description: 'Prolonged operations powered by dual 100 Ah Li-Ion battery packs.' },
+      { icon: 'Eye', title: 'LiDAR Avoidance', description: 'Smart collision avoidance and real-time obstacle detection.' },
+      { icon: 'MapPin', title: 'RTK GNSS Accuracy', description: 'Centimeter-level positioning accuracy for precise hydrographic surveys.' }
     ],
     specs: [
       { label: 'Dimensions', value: '1.8 x 0.9 x 0.3 m' },
@@ -162,6 +180,12 @@ export const products = [
       'Collision Avoidance: LiDAR Obstacle Detection',
       'Navigation: RTK GNSS Centimeter Accuracy',
     ],
+    highlights: [
+      { icon: 'Compass', title: 'Autonomous Navigation', description: 'Switch between manual controls and smart self-guided routes via 5G GUI.' },
+      { icon: 'Clock', title: '6 Hours Endurance', description: 'High-capacity battery configuration for extended coastal and inland missions.' },
+      { icon: 'Radio', title: '2.5 Km Range', description: 'High-power remote control combined with real-time 5G telemetry link.' },
+      { icon: 'Anchor', title: '15 Kg Payload', description: 'Carry multiple survey payloads and sonar sensors through the hull mount.' }
+    ],
     specs: [
       { label: 'Dimensions', value: '0.82 x 0.5 x 1.2 m' },
       { label: 'Survey Speed', value: '2-3 Knots' },
@@ -207,6 +231,12 @@ export const products = [
       'Cone Penetrometer Setup for Soil Bearing Pressure',
       'Sensors: Water Current, Depth, Bed Profile',
     ],
+    highlights: [
+      { icon: 'Route', title: 'Soft-Soil Crawling', description: 'Crawl on extremely soft soils with bearing strength down to 2Kpa.' },
+      { icon: 'TrendingUp', title: '45° Climbing Angle', description: 'Highly stable crawling capability underwater and on steep banks.' },
+      { icon: 'Layers', title: 'Dual Comm Mode', description: 'Wireless control on the surface (4-5km) and tethered underwater (250m).' },
+      { icon: 'Activity', title: 'Geotechnical Sensors', description: 'Cone penetrometer setup to measure soil bearing pressure directly.' }
+    ],
     specs: [
       { label: 'Portable System', value: 'weighing less than 70 Kg' },
       { label: 'Operational Depth', value: 'Upto 100 m' },
@@ -243,6 +273,12 @@ export const products = [
       'Rated Depth: 2000m (CB12200) / 100m (C2010)',
       'Battery: Li-Ion 14.8V 20000 mAh',
     ],
+    highlights: [
+      { icon: 'Camera', title: '12.3 MP Sensor', description: 'Shoot stunning 4K UHD video and capture high-resolution stills.' },
+      { icon: 'Anchor', title: '2000m Depth Rating', description: 'Housed in premium SS316 to withstand extreme deep-ocean pressure.' },
+      { icon: 'Cpu', title: 'NVIDIA Jetson Onboard', description: 'Edge computing power for real-time video processing and intelligent features.' },
+      { icon: 'HardDrive', title: '60 GB Internal Storage', description: 'Ample onboard storage capacity for autonomous recording sessions.' }
+    ],
     specs: [
       { label: 'Sensor Resolution', value: '12.3 MP (4056x3040 px)' },
       { label: 'Video', value: '4K UHD, 1080P' },
@@ -261,7 +297,7 @@ export const products = [
   {
     id: 'ulights',
     slug: 'ulights',
-    customUrl: '/underwater-light-battery-detail',
+    customUrl: '/underwater-light-battery-powered-lb15200', // Matches routes
     badge: 'Deepsea Illumination',
     badgeColor: 'cyan',
     name: 'Underwater Light Battery Powered - LB15200',
@@ -279,6 +315,12 @@ export const products = [
       'Housing: AL-6061 Anodised & Acrylic',
       'Rated Depth: 2000m (LB15200) / 100m (L40010)',
       'Control: Software Dimming & Stage Timers',
+    ],
+    highlights: [
+      { icon: 'Sun', title: '1500-4000 Lumens', description: 'High-power LED illumination to pierce deep-sea and turbid water darkness.' },
+      { icon: 'Anchor', title: '2000m Rated Depth', description: 'Self-contained battery-powered drop system built for extreme ocean depths.' },
+      { icon: 'Sliders', title: 'Software Dimming', description: 'Smart 4-stage timer options and software-based dimming integration.' },
+      { icon: 'Clock', title: '2+ Hours Runtime', description: 'Long-lasting illumination for extensive deep underwater inspection runs.' }
     ],
     specs: [
       { label: 'Brightness', value: '1500 to 4000 Lumens' },
@@ -316,6 +358,12 @@ export const products = [
       'Display: Epicase GCS (7" / 15.6" options)',
       'Battery life: 4-5 Hours working time',
     ],
+    highlights: [
+      { icon: 'Wind', title: '100m Winch Frame', description: 'Aerospace-grade manual/motorized winch frame for deep well deployments.' },
+      { icon: 'Shield', title: 'IP68 SS-304 Housing', description: 'Heavy-duty waterproof enclosure built for narrow and high-pressure boreholes.' },
+      { icon: 'Tv', title: 'Epicase GCS Display', description: 'Rugged 7" or 15.6" weatherproof ground control station.' },
+      { icon: 'Clock', title: '4-5 Hours Runtime', description: 'Operate fully untethered from external power sources in the field.' }
+    ],
     specs: [
       { label: 'Camera', value: '1500TVL / 2MP 1080P' },
       { label: 'Waterproofing', value: 'IP68 SS-304 Housing' },
@@ -348,6 +396,12 @@ export const products = [
       'IP68 waterproof enclosure',
       'True-to-color performance',
       'Low light optimization',
+    ],
+    highlights: [
+      { icon: 'Camera', title: '4K UHD Resolution', description: 'Capture stunning high-definition visual documentation underwater.' },
+      { icon: 'Anchor', title: '300m Depth Rating', description: 'Housed in waterproof IP68 enclosure suited for various research tasks.' },
+      { icon: 'Activity', title: 'Sony CMOS Sensor', description: 'Optimized for high-fidelity imaging even in low-light and turbid waters.' },
+      { icon: 'Sliders', title: 'Cat6 POE Connection', description: 'Reliable real-time high-bandwidth video transmission and power delivery.' }
     ],
     specs: [
       { label: 'Resolution', value: '4K UHD' },

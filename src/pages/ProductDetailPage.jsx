@@ -4,6 +4,8 @@ import { Check, ArrowLeft, Mail } from 'lucide-react'
 import PageHero from '../components/PageHero/PageHero'
 import { getProductBySlug } from '../data/productsData'
 import './ProductDetailPage.css'
+import Payloads from '../components/Payloads/Payloads'
+
 
 export default function ProductDetailPage() {
   const { slug } = useParams()
@@ -108,7 +110,6 @@ export default function ProductDetailPage() {
                   </ul>
                 </div>
               )}
-
               {/* Technical Specifications */}
               {product.specs && product.specs.length > 0 && (
                 <div className="product-detail-specs-wrap">
@@ -140,6 +141,7 @@ export default function ProductDetailPage() {
           </div>
         </div>
       </section>
-    </>
+    
+      <Payloads /></>
   )
 }

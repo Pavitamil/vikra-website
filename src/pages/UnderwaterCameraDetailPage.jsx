@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion'
 import PageHero from '../components/PageHero/PageHero'
+import SpecsList from '../components/SpecsList/SpecsList'
 import cagedCameraImg from '../assets/vikra-product-img/under-camera-img-1.png'
 import matCameraImg from '../assets/vikra-product-img/under-camera-img-2.png'
 import specsCB12200Img from '../assets/vikra-product-img/under-camera-spec-img.png'
 import specsC2010Img from '../assets/vikra-product-img/under-water-camera-light-spec.png'
 import './WavebotDetailPage.css' // Reuse premium light-mode styling
+import Payloads from '../components/Payloads/Payloads'
+
 
 export default function UnderwaterCameraDetailPage() {
   const specsCB12200 = [
@@ -13,23 +16,20 @@ export default function UnderwaterCameraDetailPage() {
     { label: 'Aperture', value: 'F2.8' },
     { label: 'Lens', value: '3.6 mm' },
     { label: 'Image Sensor Format', value: '1/2.3"' },
-    { label: 'Video', value: '4K, 1080P (Jetson Powered)' },
-    { label: 'In Built Memory', value: '60 GB' },
-    { label: 'Dimensions', value: '124 mm x 382 mm' },
-    { label: 'Input Voltage', value: '12 V DC' },
-    { label: 'Battery', value: 'Li-Ion, 14.8V, 20000 mAh' },
-    { label: 'Material', value: 'SS316 and Glass' },
-    { label: 'Rated Depth', value: '2000 m' },
-    { label: 'FOV', value: '90 Deg' },
-    { label: 'Weight', value: '25 Kg' },
-    { label: 'Recording Software', value: 'Deep Cam V2.0 (Windows)' },
+    { label: 'Storage', value: '60 GB (On Board)' },
+    { label: 'Battery', value: 'Li-Ion 14.8V, 20000 mAh' },
+    { label: 'Housing Material', value: 'SS316 & Glass' },
+    { label: 'Weight in Air', value: '4.8 Kg (Battery included)' },
+    { label: 'Weight in Water', value: '3.1 Kg' },
+    { label: 'Operational Depth', value: '2000 m' },
+    { label: 'Input Power', value: '14.8 V DC' },
+    { label: 'Processor', value: 'Jetson Nano' },
   ]
 
   const specsC2010 = [
-    { label: 'Pixel', value: '2MP, 1080P, 25-30fps' },
-    { label: 'Lens', value: '3.6 mm' },
-    { label: 'Dimensions', value: '85(Dia) x 100 mm' },
-    { label: 'Input Voltage', value: '12 V DC POE' },
+    { label: 'Resolution', value: '2MP, 1080P, 30fps' },
+    { label: 'Illumination', value: '0.0001 Lux' },
+    { label: 'Image Sensor Format', value: '1/2.8" Sony back-illuminated CMOS sensor' },
     { label: 'Material', value: 'SS316 and Glass/Acrylic' },
     { label: 'Rated Depth', value: '100 m' },
     { label: 'FOV', value: '90 Deg' },
@@ -131,7 +131,7 @@ export default function UnderwaterCameraDetailPage() {
 
       {/* Specifications Showcase Directory */}
       <section className="wavebot-specs-section" style={{ padding: '100px 0', background: '#f8fafc', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
-        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
             <span className="wavebot-tech-badge">SPECIFICATIONS DIRECTORY</span>
@@ -144,8 +144,7 @@ export default function UnderwaterCameraDetailPage() {
 
             {/* Model 1: CB12200 (Battery Powered) */}
             <motion.div 
-              className="glass-card" 
-              style={{ background: '#ffffff', borderRadius: '24px', padding: '40px', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 20px 40px rgba(0,0,0,0.04)' }}
+              className="spec-model-wrapper"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -155,28 +154,23 @@ export default function UnderwaterCameraDetailPage() {
                 Underwater Camera Battery Powered - CB12200
               </h3>
               
-              <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '40px', alignItems: 'center' }}>
-                <div>
+              <div className="specs-two-column-grid" style={{ marginTop: '0', alignItems: 'center' }}>
+                {/* Left Column: Specifications List */}
+                <div className="specs-list-col">
+                  <SpecsList specs={specsCB12200} />
+                </div>
+                {/* Right Column: Model Image */}
+                <div className="specs-image-col">
                   <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)', boxShadow: '0 10px 20px rgba(0,0,0,0.05)' }}>
                     <img src={specsCB12200Img} alt="CB12200 Battery Camera Specs Model" style={{ width: '100%', height: 'auto', display: 'block' }} />
                   </div>
-                </div>
-                <div>
-                  <ul style={{ listStyleType: 'disc', paddingLeft: '20px', fontSize: '1.05rem', lineHeight: '2.0', color: '#475569' }}>
-                    {specsCB12200.map((spec, idx) => (
-                      <li key={idx} style={{ marginBottom: '8px' }}>
-                        <strong style={{ color: '#1e293b' }}>{spec.label}</strong> – {spec.value}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             </motion.div>
 
             {/* Model 2: C2010 */}
             <motion.div 
-              className="glass-card" 
-              style={{ background: '#ffffff', borderRadius: '24px', padding: '40px', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 20px 40px rgba(0,0,0,0.04)' }}
+              className="spec-model-wrapper"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -186,20 +180,16 @@ export default function UnderwaterCameraDetailPage() {
                 Underwater Camera - C2010
               </h3>
               
-              <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '40px', alignItems: 'center' }}>
-                <div>
+              <div className="specs-two-column-grid" style={{ marginTop: '0', alignItems: 'center' }}>
+                {/* Left Column: Specifications List */}
+                <div className="specs-list-col">
+                  <SpecsList specs={specsC2010} />
+                </div>
+                {/* Right Column: Model Image */}
+                <div className="specs-image-col">
                   <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)', boxShadow: '0 10px 20px rgba(0,0,0,0.05)' }}>
                     <img src={specsC2010Img} alt="C2010 POE Camera Specs Model" style={{ width: '100%', height: 'auto', display: 'block' }} />
                   </div>
-                </div>
-                <div>
-                  <ul style={{ listStyleType: 'disc', paddingLeft: '20px', fontSize: '1.05rem', lineHeight: '2.0', color: '#475569' }}>
-                    {specsC2010.map((spec, idx) => (
-                      <li key={idx} style={{ marginBottom: '8px' }}>
-                        <strong style={{ color: '#1e293b' }}>{spec.label}</strong> – {spec.value}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             </motion.div>
@@ -208,6 +198,7 @@ export default function UnderwaterCameraDetailPage() {
 
         </div>
       </section>
-    </>
+    
+      <Payloads /></>
   )
 }

@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion'
 import PageHero from '../components/PageHero/PageHero'
+import SpecsList from '../components/SpecsList/SpecsList'
 import caseImg from '../assets/vikra-product-img/under-water-img-1.png'
 import tankImg from '../assets/vikra-product-img/under-water-img-2.png'
 import specsImg15200 from '../assets/vikra-product-img/underwater-spec-img.png'
 import lightImgL40010 from '../assets/vikra-product-img/under-light-img.png'
 import lightImgL15010 from '../assets/vikra-product-img/under-water-light-2.png'
 import './WavebotDetailPage.css' // Reuse premium light-mode styling
+import Payloads from '../components/Payloads/Payloads'
+
 
 export default function UnderwaterLightBatteryDetailPage() {
   const specsLB15200 = [
@@ -13,23 +16,19 @@ export default function UnderwaterLightBatteryDetailPage() {
     { label: 'Temperature', value: '5000K Cool White' },
     { label: 'Power', value: '15 Watt' },
     { label: 'Dimensions', value: '90 mm (Dia) x 496 mm (length)' },
-    { label: 'Weight', value: '3.2 Kg' },
-    { label: 'Beam Angle', value: '100 Deg' },
-    { label: 'Battery', value: 'Rechargeable Li-Ion' },
-    { label: 'Capacity', value: '11.4 V 7.5 Ah' },
-    { label: 'Material', value: 'AL-6061 Anodised and Glass/Acrylic' },
+    { label: 'Input Voltage', value: '12 V DC' },
+    { label: 'Material', value: 'AL-6061 Anodised and Acrylic' },
     { label: 'Rated Depth', value: '2000 m' },
-    { label: 'Intensity Control', value: '4 stages with Timer Control' },
-    { label: 'Connectivity', value: 'USB 2.0 / USB 3.0' },
-    { label: 'Minimum Duration', value: '2 Hrs' },
-    { label: 'Software', value: 'Deep Light V2.0 (Windows)' },
+    { label: 'Duration', value: 'Min 2 hours' },
+    { label: 'Intensity Control', value: 'Timer Based (4 stages)' },
+    { label: 'Built in battery', value: 'Li-Ion 11.1V, 20000 mAh' },
   ]
 
   const specsL40010 = [
     { label: 'Lumens', value: '4000' },
     { label: 'Temperature', value: '5000K Cool White' },
     { label: 'Beam Angle', value: '100 Deg' },
-    { label: 'Dimensions', value: '120 mm (Dia) x 88 mm (Length)' },
+    { label: 'Dimensions', value: '85 mm (Dia) x 120 mm (Length)' },
     { label: 'Input Voltage', value: '12 V DC' },
     { label: 'Material', value: 'AL-6061 Anodised and Glass/Acrylic' },
     { label: 'Rated Depth', value: '100 m' },
@@ -143,7 +142,7 @@ export default function UnderwaterLightBatteryDetailPage() {
 
       {/* Specifications Showcase Directory */}
       <section className="wavebot-specs-section" style={{ padding: '100px 0', background: '#f8fafc', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
-        <div className="container" style={{ maxWidth: '1000px', margin: '0 auto' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
             <span className="wavebot-tech-badge">SPECIFICATIONS DIRECTORY</span>
@@ -156,8 +155,7 @@ export default function UnderwaterLightBatteryDetailPage() {
 
             {/* Model 1: LB15200 (Battery Powered) */}
             <motion.div 
-              className="glass-card" 
-              style={{ background: '#ffffff', borderRadius: '24px', padding: '40px', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 20px 40px rgba(0,0,0,0.04)' }}
+              className="spec-model-wrapper"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -167,28 +165,23 @@ export default function UnderwaterLightBatteryDetailPage() {
                 Underwater Light Battery Powered - LB15200
               </h3>
               
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'center' }}>
-                <div>
+              <div className="specs-two-column-grid" style={{ marginTop: '0', alignItems: 'center' }}>
+                {/* Left Column: Specifications List */}
+                <div className="specs-list-col">
+                  <SpecsList specs={specsLB15200} />
+                </div>
+                {/* Right Column: Model Image */}
+                <div className="specs-image-col">
                   <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)', boxShadow: '0 10px 20px rgba(0,0,0,0.05)' }}>
                     <img src={specsImg15200} alt="LB15200 Battery Light Specs Model" style={{ width: '100%', height: 'auto', display: 'block' }} />
                   </div>
-                </div>
-                <div>
-                  <ul style={{ listStyleType: 'disc', paddingLeft: '20px', fontSize: '1.05rem', lineHeight: '2.0', color: '#475569' }}>
-                    {specsLB15200.map((spec, idx) => (
-                      <li key={idx} style={{ marginBottom: '8px' }}>
-                        <strong style={{ color: '#1e293b' }}>{spec.label}</strong> – {spec.value}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             </motion.div>
 
             {/* Model 2: L40010 */}
             <motion.div 
-              className="glass-card" 
-              style={{ background: '#ffffff', borderRadius: '24px', padding: '40px', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 20px 40px rgba(0,0,0,0.04)' }}
+              className="spec-model-wrapper"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -198,28 +191,23 @@ export default function UnderwaterLightBatteryDetailPage() {
                 Underwater Light - L40010
               </h3>
               
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'center' }}>
-                <div>
+              <div className="specs-two-column-grid" style={{ marginTop: '0', alignItems: 'center' }}>
+                {/* Left Column: Specifications List */}
+                <div className="specs-list-col">
+                  <SpecsList specs={specsL40010} />
+                </div>
+                {/* Right Column: Model Image */}
+                <div className="specs-image-col">
                   <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)', boxShadow: '0 10px 20px rgba(0,0,0,0.05)' }}>
                     <img src={lightImgL40010} alt="L40010 4000 Lumens Light Specs Model" style={{ width: '100%', height: 'auto', display: 'block' }} />
                   </div>
-                </div>
-                <div>
-                  <ul style={{ listStyleType: 'disc', paddingLeft: '20px', fontSize: '1.05rem', lineHeight: '2.0', color: '#475569' }}>
-                    {specsL40010.map((spec, idx) => (
-                      <li key={idx} style={{ marginBottom: '8px' }}>
-                        <strong style={{ color: '#1e293b' }}>{spec.label}</strong> – {spec.value}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             </motion.div>
 
             {/* Model 3: L15010 */}
             <motion.div 
-              className="glass-card" 
-              style={{ background: '#ffffff', borderRadius: '24px', padding: '40px', border: '1px solid rgba(0,0,0,0.06)', boxShadow: '0 20px 40px rgba(0,0,0,0.04)' }}
+              className="spec-model-wrapper"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -229,20 +217,16 @@ export default function UnderwaterLightBatteryDetailPage() {
                 Underwater Light - L15010
               </h3>
               
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'center' }}>
-                <div>
+              <div className="specs-two-column-grid" style={{ marginTop: '0', alignItems: 'center' }}>
+                {/* Left Column: Specifications List */}
+                <div className="specs-list-col">
+                  <SpecsList specs={specsL15010} />
+                </div>
+                {/* Right Column: Model Image */}
+                <div className="specs-image-col">
                   <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.08)', boxShadow: '0 10px 20px rgba(0,0,0,0.05)' }}>
                     <img src={lightImgL15010} alt="L15010 1500 Lumens Light Specs Model" style={{ width: '100%', height: 'auto', display: 'block' }} />
                   </div>
-                </div>
-                <div>
-                  <ul style={{ listStyleType: 'disc', paddingLeft: '20px', fontSize: '1.05rem', lineHeight: '2.0', color: '#475569' }}>
-                    {specsL15010.map((spec, idx) => (
-                      <li key={idx} style={{ marginBottom: '8px' }}>
-                        <strong style={{ color: '#1e293b' }}>{spec.label}</strong> – {spec.value}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             </motion.div>
@@ -251,6 +235,7 @@ export default function UnderwaterLightBatteryDetailPage() {
 
         </div>
       </section>
-    </>
+    
+      <Payloads /></>
   )
 }
