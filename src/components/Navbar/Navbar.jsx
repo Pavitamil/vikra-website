@@ -96,6 +96,7 @@ export default function Navbar({ onLogout }) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
+  const [mobileExpandedMenu, setMobileExpandedMenu] = useState(null)
   const [dropdownTop, setDropdownTop] = useState(120)
   const navRef = useRef(null)
   
@@ -127,6 +128,12 @@ export default function Navbar({ onLogout }) {
   const handleNavClick = () => {
     setMobileOpen(false)
     setActiveDropdown(null)
+    setMobileExpandedMenu(null)
+  }
+
+  const toggleMobileMenu = (label, e) => {
+    e.preventDefault()
+    setMobileExpandedMenu(prev => prev === label ? null : label)
   }
 
   const isLinkActive = (to) => {
@@ -260,20 +267,47 @@ export default function Navbar({ onLogout }) {
             <ul className="mobile-nav-links">
               {navLinks.map((link) => (
                 <li key={link.label}>
-                  <Link to={link.to} className="mobile-nav-link" onClick={handleNavClick}>
-                    {link.label}
-                  </Link>
-                  {link.dropdown && (
-                    <ul className="mobile-dropdown">
-                      {link.dropdown.map((item) => (
-                        <li key={item.label}>
-                          <Link to={item.to} className="mobile-dropdown-item" onClick={handleNavClick}>
-                            {item.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  <div className="mobile-nav-link-wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <Link to={link.to} className="mobile-nav-link" onClick={handleNavClick} style={{ flex: 1 }}>
+                      {link.label}
+                    </Link>
+                    {link.dropdown && (
+                      <button 
+                        className="mobile-dropdown-toggle"
+                        onClick={(e) => toggleMobileMenu(link.label, e)}
+                        style={{ padding: '10px', background: 'transparent', border: 'none', color: 'var(--color-text-body)' }}
+                      >
+                        <ChevronDown 
+                          size={18} 
+                          style={{ 
+                            transform: mobileExpandedMenu === link.label ? 'rotate(180deg)' : 'rotate(0deg)',
+                            transition: 'transform 0.2s ease'
+                          }} 
+                        />
+                      </button>
+                    )}
+                  </div>
+                  
+                  <AnimatePresence>
+                    {link.dropdown && mobileExpandedMenu === link.label && (
+                      <motion.ul 
+                        className="mobile-dropdown"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        style={{ overflow: 'hidden' }}
+                      >
+                        {link.dropdown.map((item) => (
+                          <li key={item.label}>
+                            <Link to={item.to} className="mobile-dropdown-item" onClick={handleNavClick}>
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </motion.ul>
+                    )}
+                  </AnimatePresence>
                 </li>
               ))}
             </ul>

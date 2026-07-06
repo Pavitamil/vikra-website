@@ -265,3 +265,11 @@
   .hero-dashes-container { bottom: 24px; }
 }
 
+@media (max-width: 480px) {
+  .hero-title { font-size: 1.5rem; }
+  .hero-description { font-size: 0.85rem; padding: 0 10px; }
+  .btn-get-started { padding: 8px 24px; font-size: 0.85rem; }
+  .hero-arrow-edge { width: 36px; height: 36px; display: none; } /* Hide arrows on very small mobile for more screen real estate */
+  .hero-dashes-container { bottom: 15px; }
+}
+

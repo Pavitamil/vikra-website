@@ -302,12 +302,24 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 /* ============================================
    RESPONSIVE
    ============================================ */
+@media (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
 @media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
   :root { --section-padding: 60px 0; }
   .section-title { font-size: 1.6rem; }
 }
 
 @media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
   :root {
     --section-padding: 48px 0;
     --container-padding: 0 16px;

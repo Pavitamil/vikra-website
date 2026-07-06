@@ -95,9 +95,7 @@ export default function Footer() {
           <p className="footer-copyright">
             © Copyright <strong>Vikra ocean tech</strong> All Rights Reserved
           </p>
-          <p className="footer-designed-by">
-            Designed by <a href="https://bootstrapmade.com/" target="_blank" rel="noreferrer">BootstrapMade</a>
-          </p>
+
           <button
             className="scroll-top-btn"
             onClick={scrollToTop}
