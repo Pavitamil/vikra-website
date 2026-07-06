@@ -75,7 +75,7 @@ export default function UnderwaterLightBatteryDetailPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h4 className="wavebot-tech-badge">Overview</h4>
+              <h4 className="wavebot-tech-badge">UNDERWATER LIGHT LB15200</h4>
               <p className="wavebot-overview-p" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
                 Battery powered Underwater lights are typically specialized and built to withstand the extreme pressures and harsh conditions found in the deep ocean. These lights are commonly used in submersibles, scientific research equipment for deep-sea exploration. Lights used at such depths must be designed to withstand the immense water pressure. Deepsea environments can be extremely cold, and lights are designed to operate at low temperatures.
               </p>
@@ -126,14 +126,7 @@ export default function UnderwaterLightBatteryDetailPage() {
                 These lights typically produce a high lumen output to provide sufficient illumination in the deep, dark ocean. LED technology is often used for its efficiency and brightness. The lights are designed to be easily integrated into the equipment, vehicles, or submersibles for which they are intended. Various mounting options, such as bolt-on or custom-designed mounts. These lights are specialized, expensive, and essential for the success of underwater missions in the deep ocean. Energy-efficient LED lights, which not only reduce energy consumption but also produce less heat, making them suitable for maintaining water temperature in aquatic environments.
               </p>
               
-              <div className="wavebot-gcs-badge-box">
-                <p style={{ margin: 0, fontWeight: 700, fontSize: '0.95rem', color: '#1e293b' }}>
-                  VIKRA DEEPSEA LIGHTS SERIES
-                </p>
-                <a href="https://www.vikraoceantech.com" target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', color: '#0066cc', textDecoration: 'none', fontWeight: 600 }}>
-                  www.vikraoceantech.com
-                </a>
-              </div>
+
             </motion.div>
           </div>
 
@@ -236,6 +229,15 @@ export default function UnderwaterLightBatteryDetailPage() {
         </div>
       </section>
     
-      <Payloads /></>
+      <Payloads 
+        imagingImages={[
+          "/uw_light_payload_1_1783272229132.png", 
+          "/uw_light_payload_2_1783272240378.png"
+        ]}
+        sideScanImages={[
+          "/uw_light_payload_3_1783272251974.png", 
+          "/uw_light_payload_4_1783272262211.png"
+        ]}
+      /></>
   )
 }

@@ -44,7 +44,7 @@ export default function KoormaDetailPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h4 className="wavebot-tech-badge">VIKRA OCEAN TECH</h4>
+              <h4 className="wavebot-tech-badge">KOORMA</h4>
               <p className="wavebot-overview-p" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
                 The strength of the Vikra lies in smart design and manufacturing. We are developing technology that will allow the fullest utilization of our marine and inland water bodies. Our current projects involve structural health inspection of dam, bridges and towers, periodic inspection of silt/ soil in the water bodies to enhance unobstructed flow in waterbodies. We also offer deep sea experimentation for academic and commercial entities.
               </p>
@@ -91,14 +91,7 @@ export default function KoormaDetailPage() {
                 The amphibious crawling robot is designed to assist military personnel in measuring in-situ soil strength across wet gaps. It operates with a tethered system underwater, while utilizing a wireless system for surface operations. Equipped with a cone penetrometer for measuring soil bearing pressure, the system also includes sensors for depth, bed profile, and water current monitoring.
               </p>
               
-              <div className="wavebot-gcs-badge-box">
-                <p style={{ margin: 0, fontWeight: 700, fontSize: '0.95rem', color: '#1e293b' }}>
-                  KOORMA (Amphibious Crawling Robot)
-                </p>
-                <a href="https://www.vikraoceantech.com" target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', color: '#0066cc', textDecoration: 'none', fontWeight: 600 }}>
-                  www.vikraoceantech.com
-                </a>
-              </div>
+
             </motion.div>
           </div>
 
@@ -130,6 +123,15 @@ export default function KoormaDetailPage() {
         </div>
       </section>
     
-      <Payloads /></>
+      <Payloads 
+        imagingImages={[
+          "/koorma_payload_1_1783254620764.png", 
+          "/koorma_payload_2_1783254631259.png"
+        ]}
+        sideScanImages={[
+          "/koorma_payload_3_1783254641370.png", 
+          "/koorma_payload_4_1783254651387.png"
+        ]}
+      /></>
   )
 }

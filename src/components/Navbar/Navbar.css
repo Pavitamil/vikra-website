@@ -71,7 +71,7 @@
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   padding: 14px 0;
   transition: all var(--transition-normal);
 }
@@ -96,10 +96,11 @@
   gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
+  margin-left: -50px;
 }
 
 .navbar-logo-img {
-  height: 64px;
+  height: 90px;
   width: auto;
   object-fit: contain;
   transition: transform var(--transition-fast);
@@ -118,7 +119,7 @@
 
 .logo-name {
   font-family: var(--font-display);
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   font-weight: 700;
   letter-spacing: 3px;
   background: linear-gradient(135deg, #0099cc, #00ccee);
@@ -129,7 +130,7 @@
 
 .logo-sub {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 2.5px;
   color: var(--color-text-muted);

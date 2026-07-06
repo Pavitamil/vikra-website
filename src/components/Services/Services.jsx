@@ -4,42 +4,42 @@ import './Services.css'
 
 const services = [
   {
-    icon: <Search size={28} />,
+    icon: <img src="/underwater_inspection_real.png" alt="Underwater Inspection" className="service-real-img" />,
     title: 'Underwater Inspection',
     description: 'Dam, bridge, pier, and pipeline inspection using ROVs and crawlers with HD imaging and real-time data.',
     highlights: ['Dam Inspections', 'Pier & Bridge', 'Pipeline Survey'],
     color: 'cyan',
   },
   {
-    icon: <BarChart3 size={28} />,
+    icon: <img src="/hydrographic_surveys_real.png" alt="Hydrographic Surveys" className="service-real-img" />,
     title: 'Hydrographic Surveys',
     description: 'Accurate bathymetric and hydrographic survey services with sub-centimeter precision using our USV platform.',
     highlights: ['Bathymetric Mapping', 'Harbor Surveys', 'Coastal Mapping'],
     color: 'teal',
   },
   {
-    icon: <Anchor size={28} />,
+    icon: <img src="/aquaculture_monitoring_real.png" alt="Aquaculture Monitoring" className="service-real-img" />,
     title: 'Aquaculture Monitoring',
     description: 'Monitoring fish cages, netting conditions, and water quality in aquaculture facilities with autonomous systems.',
     highlights: ['Fish Farm Surveys', 'Net Inspection', 'Water Quality'],
     color: 'cyan',
   },
   {
-    icon: <Microscope size={28} />,
+    icon: <img src="/environmental_research_real.png" alt="Environmental Research" className="service-real-img" />,
     title: 'Environmental Research',
     description: 'Marine ecosystem assessment, coral reef monitoring, and sediment analysis supporting scientific research teams.',
     highlights: ['Ecosystem Analysis', 'Coral Monitoring', 'Sediment Study'],
     color: 'teal',
   },
   {
-    icon: <Gauge size={28} />,
+    icon: <img src="/defence_idex_real.png" alt="Defence & IDEX" className="service-real-img" />,
     title: 'Defence & IDEX',
     description: 'Defense-grade underwater reconnaissance, harbor security surveys, and mine countermeasure operations.',
     highlights: ['Harbor Security', 'Reconnaissance', 'Mine Detection'],
     color: 'cyan',
   },
   {
-    icon: <Ship size={28} />,
+    icon: <img src="/hull_inspections_real.png" alt="Hull Inspections" className="service-real-img" />,
     title: 'Hull Inspections',
     description: 'Fast, cost-effective hull inspection and fouling assessment for ships and offshore structures without dry-docking.',
     highlights: ['Ship Hull', 'Fouling Analysis', 'Offshore Platforms'],
@@ -92,14 +92,9 @@ export default function Services() {
               <div className="service-info-wrap">
                 <h3 className="service-title-horizontal">{s.title}</h3>
                 <p className="service-desc-horizontal">{s.description}</p>
-                <ul className="service-highlights-horizontal">
-                  {s.highlights.map((h) => (
-                    <li key={h} className="service-highlight-horizontal">
-                      <div className={`service-highlight-dot service-dot-${s.color}`} />
-                      {h}
-                    </li>
-                  ))}
-                </ul>
+                <a href="#" className="service-view-details">
+                  View Details &rarr;
+                </a>
               </div>
             </motion.div>
           ))}

@@ -49,7 +49,7 @@ export default function BorewellCameraDetailPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h4 className="wavebot-tech-badge">Overview</h4>
+              <h4 className="wavebot-tech-badge">BOREWELL CAMERA</h4>
               <p className="wavebot-overview-p" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
                 Borehole inspection is a critical but challenging task — narrow diameters, dark environments, and high-pressure water columns make it ideal for a purpose-built robotic solution. Our Borewell Camera system handles boreholes from 80mm upwards, communicating live HD video to the surface through deep water layers with ease. Housed in a waterproof IP68 SS-304 stainless steel enclosure, it is built to withstand extreme mechanical stress.
               </p>
@@ -100,14 +100,7 @@ export default function BorewellCameraDetailPage() {
                 The rugged Epicase Ground Control Station (available in 7" display with no hard disk or 15.6" display and 1TB harddisk options) provides a fully self-contained, weatherproof control and display station. With a 4-5 hour rechargeable battery, field teams can conduct thorough structural geological surveys and pipeline mapping without any external power source, capturing every detail via coaxial or CAT6 lines.
               </p>
               
-              <div className="wavebot-gcs-badge-box">
-                <p style={{ margin: 0, fontWeight: 700, fontSize: '0.95rem', color: '#1e293b' }}>
-                  BOREWELL CAMERA (Borehole Inspection System)
-                </p>
-                <a href="https://www.vikraoceantech.com" target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', color: '#0066cc', textDecoration: 'none', fontWeight: 600 }}>
-                  www.vikraoceantech.com
-                </a>
-              </div>
+
             </motion.div>
           </div>
 
@@ -139,6 +132,15 @@ export default function BorewellCameraDetailPage() {
         </div>
       </section>
     
-      <Payloads /></>
+      <Payloads 
+        imagingImages={[
+          "/borewell_payload_1_1783272140882.png", 
+          "/borewell_payload_2_1783272151848.png"
+        ]}
+        sideScanImages={[
+          "/borewell_payload_3_1783272163937.png", 
+          "/borewell_payload_4_1783272174651.png"
+        ]}
+      /></>
   )
 }

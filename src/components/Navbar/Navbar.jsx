@@ -138,28 +138,6 @@ export default function Navbar({ onLogout }) {
 
   return (
     <header className={`navbar-header ${scrolled ? 'scrolled' : ''}`}>
-      {/* Topbar */}
-      <div className="topbar">
-        <div className="container topbar-inner">
-          <div className="topbar-contact">
-            <a href="mailto:bda@vikraoceantech.com" className="topbar-link">
-              <Mail size={14} />
-              bda@vikraoceantech.com
-            </a>
-            <a href="tel:+919360471061" className="topbar-link">
-              <Phone size={14} />
-              +91 93604 71061
-            </a>
-          </div>
-          <div className="topbar-social">
-            <a href="https://www.facebook.com/Vikraocean" target="_blank" rel="noreferrer" aria-label="Facebook"><FacebookIcon /></a>
-            <a href="https://www.linkedin.com/company/vikra-ocean-tech-pvt-ltd" target="_blank" rel="noreferrer" aria-label="LinkedIn"><LinkedinIcon /></a>
-            <a href="https://www.instagram.com/vikraoceantech" target="_blank" rel="noreferrer" aria-label="Instagram"><InstagramIcon /></a>
-            <a href="https://www.youtube.com/@vikraoceantech" target="_blank" rel="noreferrer" aria-label="YouTube"><YoutubeIcon /></a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Nav */}
       <nav className="navbar-main" ref={navRef}>
         <div className="container navbar-inner">

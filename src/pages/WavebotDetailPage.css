@@ -142,16 +142,15 @@
 }
 
 .wavebot-tech-badge {
-  display: inline-block;
-  padding: 4px 14px;
-  background: rgba(0, 150, 136, 0.08);
-  border: 1px solid rgba(0, 150, 136, 0.15);
-  color: var(--color-teal);
-  border-radius: var(--radius-full);
-  font-size: 0.72rem;
-  font-weight: 750;
-  letter-spacing: 1.5px;
-  margin-bottom: 16px;
+  display: block;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
   text-transform: uppercase;
 }
 

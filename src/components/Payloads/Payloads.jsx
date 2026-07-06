@@ -1,9 +1,16 @@
 import React from 'react';
 import './Payloads.css';
-import payloadImg1 from '../../assets/paylode-img/roviotsensor.webp';
-import payloadImg2 from '../../assets/paylode-img/rovotsensor-1.webp';
 
-export default function Payloads() {
+// Default Fallback Images
+import defaultImg1 from '../../assets/paylode-img/roviotsensor.webp';
+import defaultImg2 from '../../assets/paylode-img/rovotsensor-1.webp';
+import defaultImg3 from '../../assets/paylode-img/wavebot-pay-1.jpg';
+import defaultImg4 from '../../assets/paylode-img/wavebot-pay-2.jpg';
+
+export default function Payloads({
+  imagingImages = [defaultImg1, defaultImg2],
+  sideScanImages = [defaultImg3, defaultImg4]
+}) {
   return (
     <section className="payloads-section">
       <div className="container">
@@ -24,8 +31,8 @@ export default function Payloads() {
                 <p>Crystal-clear underwater imagery, even in poor visibility.</p>
               </div>
               <div className="payload-images">
-                <div className="payload-img-placeholder" style={{backgroundImage: `url(${payloadImg1})`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
-                <div className="payload-img-placeholder" style={{backgroundImage: `url(${payloadImg2})`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+                <div className="payload-img-placeholder" style={{backgroundImage: `url(${imagingImages[0]})`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+                <div className="payload-img-placeholder" style={{backgroundImage: `url(${imagingImages[1] || imagingImages[0]})`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
               </div>
             </div>
 
@@ -37,8 +44,8 @@ export default function Payloads() {
                 <p>High-resolution seabed mapping and object detection.</p>
               </div>
               <div className="payload-images">
-                <div className="payload-img-placeholder" style={{backgroundImage: 'url("https://placehold.co/400x225/333/666?text=Side+Scan+1")'}}></div>
-                <div className="payload-img-placeholder" style={{backgroundImage: 'url("https://placehold.co/400x225/333/666?text=Side+Scan+2")'}}></div>
+                <div className="payload-img-placeholder" style={{backgroundImage: `url(${sideScanImages[0]})`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+                <div className="payload-img-placeholder" style={{backgroundImage: `url(${sideScanImages[1] || sideScanImages[0]})`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
               </div>
             </div>
           </div>

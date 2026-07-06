@@ -1,33 +1,34 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react'
+import heroImg2 from '../../assets/herosection/herosectionimg-2.png'
 import './Hero.css'
 
 const slides = [
   {
     id: 0,
-    image: '/hero-wavebot.png',
-    title: 'Autonomous Surface Excellence with WAVEBOT',
+    image: '/hero-rovito.png',
+    title: 'Precision Underwater Inspection with ROVITO',
     description:
-      'WAVEBOT, our USV, delivers seamless surface navigation and data collection, ideal for bathymetric surveys, environmental monitoring, and surface inspections with unmatched precision..',
+      'Our advanced ROV, ROVITO, is designed for high-resolution underwater inspections, capable of reaching extreme depths for detailed monitoring and data collection in challenging environments.',
     cta: 'Get Started',
     ctaLink: '#featured-services',
   },
   {
     id: 1,
-    image: '/hero-ucam.png',
-    title: 'Clarity Below the Surface with Underwater Cameras & Lights',
+    image: '/hero-wavebot.png',
+    title: 'Autonomous Surface Excellence with WAVEBOT',
     description:
-      'Our high-definition underwater cameras and powerful lighting systems ensure crystal-clear visibility and inspection capabilities, even in the darkest and murkiest waters, ideal for marine research and industrial applications.',
+      'WAVEBOT, our USV, delivers seamless surface navigation and data collection, ideal for bathymetric surveys, environmental monitoring, and surface inspections with unmatched precision.',
     cta: 'Get Started',
     ctaLink: '#featured-services',
   },
   {
     id: 2,
-    image: '/hero-rovito.png',
-    title: 'Precision Underwater Inspection with ROVITO',
+    image: '/product-koorma.png',
+    title: 'Amphibious Soil Crawler KOORMA',
     description:
-      'Our advanced ROV, ROVITO, is designed for high-resolution underwater inspections, capable of reaching extreme depths for detailed monitoring and data collection in challenging environments.',
+      'KOORMA, our amphibious soil crawler, is built for robust terrain navigation and soil inspection in versatile environments.',
     cta: 'Get Started',
     ctaLink: '#featured-services',
   },

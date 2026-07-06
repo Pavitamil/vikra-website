@@ -64,7 +64,7 @@ export default function UnderwaterCameraDetailPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h4 className="wavebot-tech-badge">Overview</h4>
+              <h4 className="wavebot-tech-badge">UNDERWATER CAMERA CB12200</h4>
               <p className="wavebot-overview-p" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
                 An Battery Powered underwater camera is a specialized camera designed to be used underwater, typically in aquatic environments like oceans, lakes, rivers or underwater ecosystems. These cameras are built to withstand the unique challenges and conditions of submersion and are used for various purposes, including research, photography, videography, and recreational activities at a depth of 2000mtr.
               </p>
@@ -115,14 +115,7 @@ export default function UnderwaterCameraDetailPage() {
                 Depending on the intended depth of use, underwater cameras are designed to withstand varying levels of water pressure. Deep-sea cameras, for example, are built to withstand much higher pressure than those used in shallow waters. Scientists and researchers use underwater cameras to study marine life, ecosystems, and geological formations in the ocean. These cameras play a crucial role in marine biology, oceanography, and environmental research. Underwater cameras are used by search and rescue teams and law enforcement agencies for underwater search and recovery operations, such as locating submerged objects or evidence.
               </p>
               
-              <div className="wavebot-gcs-badge-box">
-                <p style={{ margin: 0, fontWeight: 700, fontSize: '0.95rem', color: '#1e293b' }}>
-                  VIKRA DEEPSEA VISION SERIES
-                </p>
-                <a href="https://www.vikraoceantech.com" target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', color: '#0066cc', textDecoration: 'none', fontWeight: 600 }}>
-                  www.vikraoceantech.com
-                </a>
-              </div>
+
             </motion.div>
           </div>
 
@@ -199,6 +192,15 @@ export default function UnderwaterCameraDetailPage() {
         </div>
       </section>
     
-      <Payloads /></>
+      <Payloads 
+        imagingImages={[
+          "/uw_cam_payload_1_1783272184931.png", 
+          "/uw_cam_payload_2_1783272196538.png"
+        ]}
+        sideScanImages={[
+          "/uw_cam_payload_3_1783272207804.png", 
+          "/uw_cam_payload_4_1783272218491.png"
+        ]}
+      /></>
   )
 }

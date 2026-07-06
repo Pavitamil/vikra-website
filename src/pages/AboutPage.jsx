@@ -1,4 +1,5 @@
 import About from '../components/About/About'
+import AboutServices from '../components/About/AboutServices'
 import PageHero from '../components/PageHero/PageHero'
 
 export default function AboutPage() {
@@ -10,6 +11,7 @@ export default function AboutPage() {
         breadcrumbs={[{ label: 'About' }]}
       />
       <About />
+      <AboutServices />
     </>
   )
 }

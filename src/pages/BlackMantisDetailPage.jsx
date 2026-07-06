@@ -50,7 +50,7 @@ export default function BlackMantisDetailPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h4 className="wavebot-tech-badge">Overview</h4>
+              <h4 className="wavebot-tech-badge">BLACK MANTIS</h4>
               <p className="wavebot-overview-p" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
                 Black Mantis is a Remotely Operable Vehicle for an Underwater surveillance and survey applications. Black Mantis can dive upto 100 m depth in an open water and can go upto 4 knots speed. Depends on the user, the payload can be integrated on the vehicle upto 0.8 Kg . The Vehicle is connected to the user through Ground Control Station(GCS). The communication between the GCS and the vehicle is achieved through the neutrally buoyant CAT6 cable. The 2 MP camera with 6000 lumens of light are very suitable for the underwater surveillance and survey applications.
               </p>
@@ -82,7 +82,7 @@ export default function BlackMantisDetailPage() {
               transition={{ duration: 0.6 }}
             >
               <div className="wavebot-detail-featured-wrap glass-card" style={{ width: '100%', height: 'auto', aspectRatio: 'auto' }}>
-                <img src="/black_mantis_underwater.png" alt="Black Mantis Deep Sea Mission" className="wavebot-detail-featured" style={{ borderRadius: '16px' }} />
+                <img src="/black_mantis_underwater_real.png" alt="Black Mantis Deep Sea Mission" className="wavebot-detail-featured" style={{ borderRadius: '16px' }} />
               </div>
             </motion.div>
 
@@ -98,14 +98,7 @@ export default function BlackMantisDetailPage() {
                 The Ground Control Station utilizes a ruggedized laptop equipped with a high-performance processor, rendering ultra-low latency real-time overlays of water currents, depths, and battery health telemetry. Combined with its high-power 6-thruster configuration, operators gain exceptional maneuverability to execute critical hull, bridge, and pipeline assessments efficiently under harsh currents, ensuring premium inspection results without risk to human divers.
               </p>
               
-              <div className="wavebot-gcs-badge-box">
-                <p style={{ margin: 0, fontWeight: 700, fontSize: '0.95rem', color: '#1e293b' }}>
-                  BLACK MANTIS (Surveillance & Survey ROV)
-                </p>
-                <a href="https://www.vikraoceantech.com" target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', color: '#0066cc', textDecoration: 'none', fontWeight: 600 }}>
-                  www.vikraoceantech.com
-                </a>
-              </div>
+
             </motion.div>
           </div>
 
@@ -129,7 +122,7 @@ export default function BlackMantisDetailPage() {
             {/* Right Column: Model Image */}
             <div className="specs-image-col">
               <div className="glass-card">
-                <img src="/black_mantis_specs_banner.png" alt="Black Mantis technical model" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <img src="/black_mantis_specs_banner_real.png" alt="Black Mantis technical model" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             </div>
           </div>
@@ -137,6 +130,15 @@ export default function BlackMantisDetailPage() {
         </div>
       </section>
     
-      <Payloads /></>
+      <Payloads 
+        imagingImages={[
+          "/black_mantis_payload_1_1783254570513.png", 
+          "/black_mantis_payload_2_1783254581067.png"
+        ]}
+        sideScanImages={[
+          "/black_mantis_payload_3_1783254591121.png", 
+          "/black_mantis_payload_4_1783254601187.png"
+        ]}
+      /></>
   )
 }

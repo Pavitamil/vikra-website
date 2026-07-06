@@ -1,5 +1,5 @@
 import Hero from '../components/Hero/Hero'
-import FeaturedServices from '../components/FeaturedServices/FeaturedServices'
+import AboutServices from '../components/About/AboutServices'
 import FeaturedUSV from '../components/FeaturedUSV/FeaturedUSV'
 import About from '../components/About/About'
 import Stats from '../components/Stats/Stats'
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <FeaturedServices />
+      <AboutServices />
       <FeaturedUSV />
       <About />
       <Stats />

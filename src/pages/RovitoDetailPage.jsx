@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion'
 import PageHero from '../components/PageHero/PageHero'
 import SpecsList from '../components/SpecsList/SpecsList'
+import img1 from '../assets/paylode-img/roviotsensor.webp'
+import img2 from '../assets/paylode-img/rovotsensor-1.webp'
+import img3 from '../assets/paylode-img/rovito-pay-2.jpg'
+import img4 from '../assets/paylode-img/rovito-pay-3.jpg'
 import rovitoImg1 from '../assets/vikra-product-img/rivot-img-1.png'
 import rovitoImg2 from '../assets/vikra-product-img/rivot-img-2.png'
 import rovitoImg3 from '../assets/vikra-product-img/rivot-img-3.png'
@@ -53,7 +57,7 @@ export default function RovitoDetailPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h4 className="wavebot-tech-badge">Overview</h4>
+              <h4 className="wavebot-tech-badge">ROVITO</h4>
               <p className="wavebot-overview-p" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
                 A Remotely Operated Vehicle (ROV) is a type of remotely controlled underwater robot or submersible used for a wide range of underwater tasks and operations. ROVs are typically unmanned and are operated by remote control from the surface. They are widely used in various industries, including marine exploration, offshore oil and gas, scientific research, military applications, and underwater infrastructure inspection and maintenance.
               </p>
@@ -101,14 +105,7 @@ export default function RovitoDetailPage() {
                 Inshore use of ROVs often reduces the need for divers to do visual inspections or in many cases ROVs make it easier for them to pinpoint work that needs to be done. When coupled with sonar, which allows precise navigation in murky waters and sharper profile images, our ROVs can perform a number of tasks to ensure the safety, purity and security of water supplies. This can also extend to pipelines with clarity at pressure depths that are hazardous for divers. The use of ROVs can increase safety and inspection quality, cut plant downtime, and also reduce costs.
               </p>
               
-              <div className="wavebot-gcs-badge-box">
-                <p style={{ margin: 0, fontWeight: 700, fontSize: '0.95rem', color: '#1e293b' }}>
-                  ROVITO (Remotely Operated Underwater Vehicle)
-                </p>
-                <a href="https://www.vikraoceantech.com" target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', color: '#0066cc', textDecoration: 'none', fontWeight: 600 }}>
-                  www.vikraoceantech.com
-                </a>
-              </div>
+
             </motion.div>
           </div>
 
@@ -140,6 +137,9 @@ export default function RovitoDetailPage() {
         </div>
       </section>
     
-      <Payloads /></>
+      <Payloads 
+        imagingImages={[img1, img2]}
+        sideScanImages={[img3, img4]}
+      /></>
   )
 }

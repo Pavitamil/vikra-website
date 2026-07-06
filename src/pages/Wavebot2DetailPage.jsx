@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion'
 import PageHero from '../components/PageHero/PageHero'
 import SpecsList from '../components/SpecsList/SpecsList'
+import img1 from '../assets/paylode-img/wavebot-pay-1.jpg'
+import img2 from '../assets/paylode-img/wavebot-pay-2.jpg'
+import img3 from '../assets/paylode-img/wavebot-pay-3.jpg'
+import img4 from '../assets/paylode-img/wavebot-pay-4.jpg'
 import wavbot2Img from '../assets/vikra-product-img/wavbot2-img.png'
 import wavebotImg2 from '../assets/vikra-product-img/wavebot-img-2.png'
 import wavebotImg3 from '../assets/vikra-product-img/wavebot-img-3.png'
@@ -55,7 +59,7 @@ export default function Wavebot2DetailPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h4 className="wavebot-tech-badge">VIKRA OCEAN TECH</h4>
+              <h4 className="wavebot-tech-badge">WAVEBOT-II</h4>
               <p className="wavebot-overview-p" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
                 The strength of the Vikra lies in smart design and manufacturing. We are developing technology that will allow the fullest utilization of our marine and inland water bodies. Our current projects involve structural health inspection of dam, bridges and towers, periodic inspection of silt/ soil in the water bodies to enhance unobstructed flow in waterbodies. We also offer deep sea experimentation for academic and commercial entities.
               </p>
@@ -102,14 +106,7 @@ export default function Wavebot2DetailPage() {
                 WAVEBOT-II is an Unmanned surface vehicle for hydrographic survey and surveillance applications. Depends on the user requirement, multiple pay load can be added. Autonomous and manual mode can be switched using GUI. The GUI application runs on a base station laptop, connected through a telemetry link (5G), and displays the vehicle’s graphical positioning and status. Battery voltage is monitored via this link. Switching from autonomous to remote control of the survey boat is easy using a high-power remote-control system that offers up to 2.5km range, with an endurance of 6 hours.
               </p>
               
-              <div className="wavebot-gcs-badge-box">
-                <p style={{ margin: 0, fontWeight: 700, fontSize: '0.95rem', color: '#1e293b' }}>
-                  WAVEBOT-II (Uncrewed surface Vessel)
-                </p>
-                <a href="https://www.vikraoceantech.com" target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', color: '#0066cc', textDecoration: 'none', fontWeight: 600 }}>
-                  www.vikraoceantech.com
-                </a>
-              </div>
+
             </motion.div>
           </div>
 
@@ -161,7 +158,10 @@ export default function Wavebot2DetailPage() {
           </div>
         </div>
       </section>
-    
-      <Payloads /></>
+      
+      <Payloads 
+        imagingImages={[img1, img2]}
+        sideScanImages={[img3, img4]}
+      /></>
   )
 }
